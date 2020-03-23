@@ -73,6 +73,9 @@ will create 3 devices with the card names passed as the second parameter:
 - `/dev/video4` -> *the number four*
 - `/dev/video7` -> *the last one*
 
+# Test
+test a virtual webcam at https://webcamtests.com/
+<br>
 # ATTRIBUTES
 you can set and/or query some per-device attributes via sysfs, in a human
 readable format. see `/sys/devices/virtual/video4linux/video*/`
