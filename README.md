@@ -31,46 +31,15 @@ the first few number are the same.
 (modules will be incompatible if the versions don't match. if you are lucky, the module will
 simply refuse to load. if you are unlucky, your computer will spit in your eye or do worse.)
 
-# BUILD
-to build the kernel module run:
-
-    $ make
-
-this should give you a file named "v4l2loopback.ko", which is the kernel module
-
 # INSTALL
-to install the module run "make install" (you might have to be 'root' to have
+to install the module run "install.sh" (you might have to be 'root' to have
 all necessary permissions to install the module).
-
-if your system has "sudo", do:
-
-    $ make && sudo make install
-    $ sudo depmod -a
-
-if your system lacks "sudo", do:
-
-    $ make
-    $ su
-    (enter root password)
-    # make install
-    # depmod -a
-    # exit
-
 
 (The `depmod -a` call will re-calculate module dependencies, in order to
 automatically load additional kernel modules required by v4l2loopback.
 The call may not be necessary on modern systems.)
 
-# RUN
-load the v4l2loopback module as root :
-
-    # modprobe v4l2loopback
-
-using sudo use:
-
-    $ sudo modprobe v4l2loopback
-
-this will create an additional video-device, e.g. /dev/video0 (the number
+this will also create an additional video-device, e.g. /dev/video0 (the number
 depends on whether you already had video devices on your system), which can be
 fed by various programs.
 tested feeders:
